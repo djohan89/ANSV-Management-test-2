@@ -218,6 +218,22 @@ a:hover {
 													</tr>
 												</table>
 											</div>
+											<div>
+												<c:if test="${item.week == current_week || item.week == (current_week - 1)}">
+													<c:if test="${item.week <10}">
+														<a href="<c:url value='/chief/update_project_tk/0${week_option}_${year_option}_${item.id}' />"
+															style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+															<i class="fas fa-edit"></i>
+														</a>
+													</c:if>
+													<c:if test="${item.week >=10}">
+														<a href="<c:url value='/chief/update_project_tk/${week_option}_${year_option}_${item.id}' />"
+															style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+															<i class="fas fa-edit"></i>
+														</a>
+													</c:if>
+												</c:if>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -279,6 +295,22 @@ a:hover {
 											<b>Kết quả thực hiện kế hoạch:</b> 
 											<span class="text-justify">${item.ket_qua_thuc_hien_ke_hoach }</span>
 										</p>
+										<div>
+											<c:if test="${item.week == current_week || item.week == (current_week - 1)}">
+												<c:if test="${item.week <10}">
+													<a href="<c:url value='/chief/update_project/0${week_option}_${year_option}_${item.id}' />"
+														style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+														<i class="fas fa-edit"></i>
+													</a>
+												</c:if>
+												<c:if test="${item.week >=10}">
+													<a href="<c:url value='/chief/update_project/${week_option}_${year_option}_${item.id}' />"
+														style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+														<i class="fas fa-edit"></i>
+													</a>
+												</c:if>
+											</c:if>
+										</div>
 									</div>
 								</c:if>
 								
@@ -327,6 +359,22 @@ a:hover {
 											<b>Kết quả thực hiện kế hoạch:</b> 
 											<span class="text-justify">${item.ket_qua_thuc_hien_ke_hoach }</span>
 										</p>
+										<div>
+											<c:if test="${item.week == current_week || item.week == (current_week - 1)}">
+												<c:if test="${item.week <10}">
+													<a href="<c:url value='/chief/update_project/0${week_option}_${year_option}_${item.id}' />"
+														style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+														<i class="fas fa-edit"></i>
+													</a>
+												</c:if>
+												<c:if test="${item.week >=10}">
+													<a href="<c:url value='/chief/update_project/${week_option}_${year_option}_${item.id}' />"
+														style="position: absolute; left: 1%;" class="float-right btn btn-warning">
+														<i class="fas fa-edit"></i>
+													</a>
+												</c:if>
+											</c:if>
+										</div>
 									</div>	
 								</c:if>
 					
