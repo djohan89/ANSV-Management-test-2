@@ -53,7 +53,7 @@
 								</a>
 							</form>
 	                    </li>
-	                    <li class="text-white pl-5" style="width: 100%;">
+	                    <%-- <li class="text-white pl-5" style="width: 100%;">
 	                    	<form action="<c:url value='/chief/upload_project' />" method='POST' id="form_import_file">
 	                    		<input type="hidden" id="file_import_name" name="file_import_name">
 	                    		<input type="hidden" id="token" name="${_csrf.parameterName}" value="${_csrf.token}" id="token" />
@@ -64,7 +64,7 @@
                         		<i class="fas fa-file-import" style="font-size: 25px;"></i>
 	                        	<span class="pl-3">Import File</span>
 							</a>
-	                    </li>
+	                    </li> --%>
                     </ul>
                 </li>
             </ul>
