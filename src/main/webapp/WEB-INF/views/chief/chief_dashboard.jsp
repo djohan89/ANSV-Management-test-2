@@ -661,7 +661,7 @@
 	function export_data(week, type) {
 		console.log(week, type);
 		var settings = {
-			  	"url": "http://10.2.8.31:3000/export",
+			  	"url": "http://10.1.3.10:3001/export",
 			  	"method": "POST",
 			  	"timeout": 0,
 			  	"headers": {
@@ -675,7 +675,7 @@
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
-			window.open('http://10.2.8.31:3000/download?file=' + response.data.file);
+			window.open('http://10.1.3.10:3001/download?file=' + response.data.file);
 		});
 	}
 	$( "#export_1" ).on( "click",  function() { export_data(week_import, 1) });
