@@ -56,6 +56,7 @@
 										<br>
 									</h3>
 								</div>
+								<div><input type="button" id="export_1" value="Export" class="btn btn-success"></div>
 							</div>
 							
 							<c:url value="0" var="week_link"/>
@@ -188,6 +189,30 @@
 		<!-- /.content -->
 	</div>
 <script type="text/javascript">	
+	var week_import = ${week};
+	
+	function export_data(week, type) {
+		console.log(week, type);
+		var settings = {
+			  	"url": "http://10.2.8.31:3000/export",
+			  	"method": "POST",
+			  	"timeout": 0,
+			  	"headers": {
+			    	"Content-Type": "application/json"
+			  	},
+			  	"data": JSON.stringify({
+			    	"week": week,
+			    	"type": type
+			  	}),
+			};
+	
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			window.open('http://10.2.8.31:3000/download?file=' + response.data.file);
+		});
+	}
+	$( "#export_1" ).on( "click",  function() { export_data(week_import, 1) });
+
 	$(document).ready(function(){
 		var groupColumn = 3;
 		/*Option table 1  */

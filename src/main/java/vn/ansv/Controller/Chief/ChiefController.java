@@ -22,6 +22,17 @@ import vn.ansv.Entity.Project;
 @Controller(value = "Chief_HomeController")
 public class ChiefController extends ChiefBaseController {
 	
+	@RequestMapping(value = "/chief/import_file")
+	public String importFile() {
+		return "view_import";
+	}
+	
+	@RequestMapping(value = "/chief/error_import")
+	public String errorImport(Model model) {
+		model.addAttribute("import_error", _errorService.getAllByDate());
+		return "error_notification/import_error";
+	}
+	
 	@RequestMapping(value = "/chief/export_data/{week}_{type}", method = RequestMethod.GET)
 	@ResponseBody
 	public String exportData(@PathVariable int week, @PathVariable int type){

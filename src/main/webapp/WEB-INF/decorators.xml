@@ -8,6 +8,23 @@
 	<decorator name="access_denied" page="">
 		<pattern>/access_denied</pattern>
 	</decorator>
+	
+	
+	
+	<!-- Phần Import file CEO -->
+	<decorator name="import_file" page="">
+		<pattern>/chief/import_file</pattern>
+	</decorator>
+	
+	<!-- Phần Import file AM -->
+	<decorator name="import_file" page="">
+		<pattern>/AM/import_file</pattern>
+	</decorator>
+	
+	<!-- Phần Import file PM -->
+	<decorator name="import_file" page="">
+		<pattern>/PM/import_file</pattern>
+	</decorator>
 
 
 

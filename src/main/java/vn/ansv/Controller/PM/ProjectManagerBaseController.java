@@ -6,6 +6,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import vn.ansv.Dao.CustomersDao;
 import vn.ansv.Service.CustomersServiceImpl;
+import vn.ansv.Service.ErrorServiceImpl;
+import vn.ansv.Service.ImportServiceImpl;
 import vn.ansv.Service.PicServiceImpl;
 import vn.ansv.Service.PriorityServiceImpl;
 import vn.ansv.Service.ProjectServiceImpl;
@@ -14,6 +16,12 @@ import vn.ansv.Service.User.UsersServiceImpl;
 
 @Controller
 public class ProjectManagerBaseController {
+	@Autowired
+	ErrorServiceImpl _errorService;
+	
+	@Autowired
+	ImportServiceImpl _importServiceImpl;
+	
 	@Autowired
 	ProjectTypesServiceImpl _projectTypesService;
 	

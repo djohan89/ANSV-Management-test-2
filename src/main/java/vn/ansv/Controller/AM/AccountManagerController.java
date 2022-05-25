@@ -22,6 +22,11 @@ import vn.ansv.Entity.Project;
 @RequestMapping("AM")
 public class AccountManagerController extends AccountManagerBaseController {
 
+	@RequestMapping(value = "/import_file")
+	public String importFile() {
+		return "view_import";
+	}
+	
 	// Hàm lấy số tuần
 	public int getWeekOfYear(Date date) {
 		

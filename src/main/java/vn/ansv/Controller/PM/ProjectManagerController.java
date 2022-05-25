@@ -1,9 +1,11 @@
 package vn.ansv.Controller.PM;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,11 @@ import vn.ansv.Entity.Project;
 @RequestMapping("PM")
 public class ProjectManagerController extends ProjectManagerBaseController {
 
+	@RequestMapping(value = "/import_file")
+	public String importFile() {
+		return "view_import";
+	}
+	
 	// Hàm lấy số tuần
 	public int getWeekOfYear(Date date) {
 
@@ -31,6 +38,25 @@ public class ProjectManagerController extends ProjectManagerBaseController {
 		int week = calendar.get(Calendar.WEEK_OF_YEAR);
 
 		return week;
+	}
+	
+	@RequestMapping(value = "/upload_project/{file_name}", method = RequestMethod.GET)
+	public String processExcel2003(@PathVariable String file_name, Model model, HttpServletRequest request) throws IOException {
+//		String file_name = request.getParameter("file_import_name");
+		Date now = new Date();
+		int current_week = getWeekOfYear(now); // Gọi hàm lấy số tuần => Lấy số tuần hiện tại
+		
+		// Thực hiện import
+		String status_import = _importServiceImpl.importProject(file_name, current_week);
+		
+		if (status_import == "1") {
+			model.addAttribute("import_error", _errorService.getAllByDate());
+			return "error_notification/import_error";
+		}
+//		_importServiceImpl.exportProject(19, 1);
+
+		int current_year = Calendar.getInstance().get(Calendar.YEAR); // Get the curent year
+		return "redirect:/chief/dashboard/" + current_week + "_" + current_year;
 	}
 
 	@RequestMapping(value = { "/dashboard/{week}_{year}" }, method = RequestMethod.GET)

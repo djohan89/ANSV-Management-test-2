@@ -659,6 +659,7 @@
 	var week_import = ${week};
 	
 	function export_data(week, type) {
+		console.log(week, type);
 		var settings = {
 			  	"url": "http://10.2.8.31:3000/export",
 			  	"method": "POST",
@@ -667,14 +668,14 @@
 			    	"Content-Type": "application/json"
 			  	},
 			  	"data": JSON.stringify({
-			    	"week": 19,
-			    	"type": 2
+			    	"week": week,
+			    	"type": type
 			  	}),
 			};
 
 		$.ajax(settings).done(function (response) {
+			console.log(response);
 			window.open('http://10.2.8.31:3000/download?file=' + response.data.file);
-		  	console.log(response);
 		});
 	}
 	$( "#export_1" ).on( "click",  function() { export_data(week_import, 1) });

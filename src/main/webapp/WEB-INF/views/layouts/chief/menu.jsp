@@ -39,7 +39,7 @@
 							</a>
 	                    </li>
 	                    <li class="text-white pl-3 mt-2" style="width: 100%;">
-                        	<a href="<c:url value='http://10.2.8.31:8080/SpringMVCFileUD/uploadOneFile' />">
+                        	<a href="<c:url value='/chief/import_file' />">
 								<i class="fas fa-file-import" style="font-size: 25px;"></i>
 	                        	<span class="pl-3">Import link</span>
 							</a>
