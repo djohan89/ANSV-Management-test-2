@@ -38,13 +38,18 @@
 						</div>
 						<!-- Map card -->
 						<div class="card" style="background: white">
-							<div class="card-header border-0 d-flex flex-row">
-								<div class="title-card">
+							<div class="card-header border-0 d-flex">
+								<div class="title-card mr-auto">
 									<h3 class="card-title d-flex">
 										<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
 										<b id="name_sheet_1"> Báo cáo ${display_name } phụ trách</b><br>
-										<br>
+										<br> 
 									</h3>
+								</div>
+								<div class="d-flex">
+									<input type="button" id="export_2" value="Export VT" class="mr-2 btn btn-success">
+									<input type="button" id="export_3" value="Export CĐS" class="btn btn-success">
+									<input type="hidden" id="username" value="${username}" class="btn btn-success">
 								</div>
 							</div>
 							
@@ -199,6 +204,34 @@
 		<!-- /.content -->
 	</div>
 <script type="text/javascript">	
+	var week_import = ${week};
+	var username = $('#username').val();
+	
+	function export_data(week, type) {
+		console.log(week, type);
+		var settings = {
+			  	"url": "http://10.1.3.10:3001/export",
+			  	"method": "POST",
+			  	"timeout": 0,
+			  	"headers": {
+			    	"Content-Type": "application/json"
+			  	},
+			  	"data": JSON.stringify({
+			    	"week": week,
+			    	"type": type,
+			    	"username": username,
+			  	}),
+			};
+	
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+			window.open('http://10.1.3.10:3001/download?file=' + response.data.file);
+		});
+	}
+	
+	$( "#export_2" ).on( "click",  function() { export_data(week_import, 2) });
+	$( "#export_3" ).on( "click",  function() { export_data(week_import, 3) });
+
 	$(document).ready(function(){
 		var groupColumn = 3;
 		/*Option table 1  */
