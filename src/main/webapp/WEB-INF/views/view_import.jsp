@@ -87,7 +87,7 @@
 			} catch (e) {
 			 
 			}
-			console.log(err.err_desc);  
+			alertify.error(err.detail);
 		});
 		
 	  	return false;
