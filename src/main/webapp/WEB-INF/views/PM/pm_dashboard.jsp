@@ -48,13 +48,13 @@
 						</div>
 						<!-- Map card -->
 						<div class="card" style="background: white">
-							<div class="card-header border-0 d-flex flex-row">
-								<div class="title-card">
-									<h3 class="card-title d-flex">
+							<div class="card-header border-0 d-flex">
+								<div class="title-card mr-auto">
+									<h3 class="card-title d-flex ">
 										<i class="fas fa-clipboard-list" style="padding-right: 8px;"></i>
 										<b id="name_sheet_1"> Dự án ${display_name } phụ trách tuần ${week }</b><br>
 										<br>
-									</h3>
+									</h3> 
 								</div>
 								<div>
 									<input type="button" id="export_1" value="Export" class="btn btn-success">
