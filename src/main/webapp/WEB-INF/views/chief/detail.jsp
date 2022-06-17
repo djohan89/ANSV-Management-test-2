@@ -24,7 +24,7 @@
 										<tr>
 											<td width="35%">
 												<span class="font-weight-bold">Status:</span>
-												<span class="pl-5">${detail.status}</span>
+												<span class="pl-2">${detail.status}</span>
 											</td>
 											<td>
 												<span class="font-weight-bold">PIC:</span>
@@ -34,12 +34,24 @@
 										<tr>
 											<td>
 												<span class="font-weight-bold">Priority:</span>
-												<span class="pl-5">${detail.priority}</span>
+												<span class="pl-2">${detail.priority}</span>
 											</td>
 											<td>
 												<span class="font-weight-bold">Khách hàng:</span>
 												<span class="pl-2">${detail.customer}</span>
 											</td>
+										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã hợp đồng</span>
+											</td>
+											<td><span>${detail.projects_id}</span></td>
+										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã số kế toán</span>
+											</td>
+											<td><span>${detail.ma_so_ke_toan}</span></td>
 										</tr>
 									</table>
 									
@@ -57,13 +69,14 @@
 											<td>${detail.solution}</td>
 										</tr>
 										<tr>
-											<th>Kế hoạch</th>
-											<td>${detail.ke_hoach}</td>
-										</tr>
-										<tr>
 											<th>Kết quả</th>
 											<td>${detail.ket_qua_thuc_hien_ke_hoach}</td>
 										</tr>
+										<tr>
+											<th>Kế hoạch</th>
+											<td>${detail.ke_hoach}</td>
+										</tr>
+										
 									</table>
 									
 								</div>
