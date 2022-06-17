@@ -47,6 +47,18 @@
 												<span class="pl-2">${detail.customer}</span>
 											</td>
 										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã hợp đồng</span>
+											</td>
+											<td><span>${detail.projects_id}</span></td>
+										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã số kế toán</span>
+											</td>
+											<td><span>${detail.ma_so_ke_toan}</span></td>
+										</tr>
 									</table>
 									
 									<table class="table table-hover table-bordered">

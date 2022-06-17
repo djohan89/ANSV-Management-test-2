@@ -53,6 +53,18 @@
 												<span class="pl-2">${detail.customer}</span>
 											</td>
 										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã hợp đồng</span>
+											</td>
+											<td><span>${detail.projects_id}</span></td>
+										</tr>
+										<tr>
+											<td>
+												<span class="font-weight-bold">Mã số kế toán</span>
+											</td>
+											<td><span>${detail.ma_so_ke_toan}</span></td>
+										</tr>
 									</table>
 									
 									<table class="table table-hover table-bordered">
@@ -170,6 +182,10 @@
 											<td>${detail.name }</td>
 										</tr>
 										<tr>
+											<th>Khách hàng</th>
+											<td>${detail.customer }</td>
+										</tr>
+										<tr>
 											<th>Mô tả dự án</th>
 											<td >${detail.description }</td>
 										</tr>
@@ -279,6 +295,10 @@
 										<tr>
 											<th>Dự án/Gói thầu</th>
 											<td>${detail.name }</td>
+										</tr>
+										<tr>
+											<th>Khách hàng</th>
+											<td>${detail.customer }</td>
 										</tr>
 										<tr>
 											<th>Mô tả dự án</th>

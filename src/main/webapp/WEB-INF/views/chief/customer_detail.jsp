@@ -119,6 +119,18 @@ a:hover {
 															<span class="pl-2">${item.customer}</span>
 														</td>
 													</tr>
+													<tr>
+														<td>
+															<span class="font-weight-bold">Mã hợp đồng</span>
+														</td>
+														<td><span>${item.projects_id}</span></td>
+													</tr>
+													<tr>
+														<td>
+															<span class="font-weight-bold">Mã số kế toán</span>
+														</td>
+														<td><span>${item.ma_so_ke_toan}</span></td>
+													</tr>
 												</table>
 												
 												<table class="table table-hover table-bordered">
@@ -135,13 +147,14 @@ a:hover {
 														<td>${item.solution}</td>
 													</tr>
 													<tr>
-														<th>Kế hoạch</th>
-														<td>${item.ke_hoach}</td>
-													</tr>
-													<tr>
 														<th>Kết quả</th>
 														<td>${item.ket_qua_thuc_hien_ke_hoach}</td>
 													</tr>
+													<tr>
+														<th>Kế hoạch</th>
+														<td>${item.ke_hoach}</td>
+													</tr>
+													
 												</table>
 											</div>
 										</div>

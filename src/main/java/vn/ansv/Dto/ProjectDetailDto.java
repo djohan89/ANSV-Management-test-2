@@ -10,6 +10,9 @@ public class ProjectDetailDto {
 	private String priority;
 	private String status;
 	
+	private String projects_id;
+	private String ma_so_ke_toan;
+	
 	private String customer;
 	private int week;
 	private int year;
@@ -85,6 +88,22 @@ public class ProjectDetailDto {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public String getProjects_id() {
+		return projects_id;
+	}
+
+	public void setProjects_id(String projects_id) {
+		this.projects_id = projects_id;
+	}
+
+	public String getMa_so_ke_toan() {
+		return ma_so_ke_toan;
+	}
+
+	public void setMa_so_ke_toan(String ma_so_ke_toan) {
+		this.ma_so_ke_toan = ma_so_ke_toan;
 	}
 
 	public String getPriority() {
